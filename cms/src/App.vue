@@ -1,30 +1,37 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <img src="./assets/logo.png">
+  <div>
+    <el-button>Default</el-button>
+    <el-button type="primary">Primary</el-button>
+    <el-button type="success">Success</el-button>
+    <el-button type="info">Info</el-button>
+    <el-button type="warning">Warning</el-button>
+    <el-button type="danger">Danger</el-button>
+    <el-input type="text"></el-input>
+  </div>
+  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="box"></div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import HelloWorld from './components/HelloWorld.vue'
 
-nav {
-  padding: 30px;
+export default {
+  name: 'App',
+  components: {
+    HelloWorld,
+  }
 }
+</script>
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+<style lang="scss">
+body {
+  background-color: #ddd;
 
-nav a.router-link-exact-active {
-  color: #42b983;
+  .box {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+  }
 }
 </style>
