@@ -13,22 +13,21 @@
 // 生产环境：production
 // 测试环境：test
 
-// let BASE_URL: string = ""
-// let BASE_NAME: string = ""
+let BASE_URL = ""
+const TIME_OUT = 10000
 
-// if (process.env.NODE_ENV == "development") {
-//     BASE_URL = "http://httpbin.org/dev"
-//     BASE_NAME = "longyou"
-// } else if (process.env.NODE_ENV == "production") {
-//     BASE_URL = "http://httpbin.org/proid"
-//     BASE_NAME = "ethanyu"
-// } else {
-//     BASE_URL = "http://httpbin.org/test"
-//     BASE_NAME = "ethanyu"
-// }
+if (process.env.NODE_ENV == "development") {
+    BASE_URL = "http://httpbin.org"
+
+} else if (process.env.NODE_ENV == "production") {
+    BASE_URL = "http://httpbin.org/proid"
+
+} else {
+    BASE_URL = "http://httpbin.org/test"
+}
 
 
-// export {
-//     BASE_URL,
-//     BASE_NAME
-// }
+export {
+    BASE_URL,
+    TIME_OUT
+}

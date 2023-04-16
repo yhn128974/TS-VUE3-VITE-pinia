@@ -43,8 +43,7 @@ axios.all([
 axios.interceptors.request.use((config) => {
     console.log('请求拦截成功');
     // config.url = "/get"
-   console.log(config);
-   
+    console.log(config);
     return config
 }, (err) => {
     console.log('请求发送错误', err);
@@ -58,9 +57,3 @@ axios.interceptors.response.use((res) => {
 }, (err) => {
     console.log("返回错误", err);
 })
-
-
-
-
-
-
