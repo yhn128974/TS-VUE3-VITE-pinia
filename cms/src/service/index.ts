@@ -4,9 +4,14 @@ import { BASE_URL, TIME_OUT } from "./request/config";
 const lyRequest1 = new LYRequest({
   timeout: TIME_OUT,
   baseURL: BASE_URL,
-
+ 
   interceptors: {
     requestInterceptor: (config) => {
+      // 携带token
+      const token = "";
+      if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+      }
       console.log("请求成功");
       return config;
     },

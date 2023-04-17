@@ -1,37 +1,34 @@
 <template>
-  <img src="./assets/logo.png">
-  <div>
-    <el-button>Default</el-button>
-    <el-button type="primary">Primary</el-button>
-    <el-button type="success">Success</el-button>
-    <el-button type="info">Info</el-button>
-    <el-button type="warning">Warning</el-button>
-    <el-button type="danger">Danger</el-button>
-    <el-input type="text"></el-input>
+  <div class="app">
+    <router-view></router-view>
   </div>
-  <HelloWorld msg="Welcome to Your Vue.js App" />
-  <div class="box"></div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="ts">
+import { defineComponent, ref } from 'vue';
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld,
+export default defineComponent(
+  {
+    name: 'App',
+    props: {
+      name: {
+        type: String
+      }
+    },
+    setup(props, ctx) {
+      const message = ref("app")
+      return {
+        message
+      }
+    },
+
   }
-}
+)
 </script>
 
 <style lang="scss">
-body {
-  background-color: #ddd;
+.app {
+  height: 100%;
 
-  .box {
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
-  }
 }
 </style>

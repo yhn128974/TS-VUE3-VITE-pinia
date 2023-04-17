@@ -1,41 +1,54 @@
+// 编译=》转换=》js es11
+// ts配置文件
 {
+  // 编译程序任选项
   "compilerOptions": {
+    // 目标代码
+    // es6以后的版本
     "target": "esnext",
-    "module": "esnext",
+    // 目标代码需要使用的模块化方案
+    "module": "esnext", //   "module": "umd", 多种方式
+    // 严格模式
     "strict": true,
+    // jsx 进行怎么样的处理，preserve=>保留
     "jsx": "preserve",
+    // 模块解析方式：node
     "moduleResolution": "node",
+
     "experimentalDecorators": true,
+    // 跳过对一下库的类型检测(axios->类型/ loadsh-->@types/lodash /其他三方库)
+    // import {} from 'axios'
     "skipLibCheck": true,
+    // esmodule 和 comonjs 能不能混合使用
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,
+    // 要不要生成映射文件
     "sourceMap": true,
+    // 文件路径在解析时基本的url
     "baseUrl": ".",
-    "types": [
-      "webpack-env"
-    ],
+    // 制定解析指定的类型
+    "types": ["webpack-env"],
+    // 路径解析(类似于webpack的 alias)
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"],
+      "components/*": ["src/components/*"]
     },
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
-    ]
+    // 可以指定下项目中可以使用哪些库的类型（proxy）
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
+  // 需要解析的文件
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
-, "src/plugins/axios.js", "src/plugins/axios.js"  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "tests/**/*.tsx",
+    "src/plugins/axios.js",
+    "src/plugins/axios.js"
+  ],
+  // 排除的
+  "exclude": ["node_modules"]
 }
