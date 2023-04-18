@@ -6,9 +6,6 @@
 
 <script lang="ts" setup >
 import LoginPanel from './cpns/loginPanel.vue'
-
-
-
 </script>
 
 <style scoped lang="scss">

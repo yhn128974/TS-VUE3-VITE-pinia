@@ -1,28 +1,25 @@
 <template>
   <div class="app">
-    <router-view></router-view>
+    <Login />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent } from 'vue';
+import Login from './views/Login/index.vue'
+export default defineComponent({
+  components: {
+    Login
+  },
+  setup() {
+    return {
 
-export default defineComponent(
-  {
-    name: 'App',
-    props: {
-      name: {
-        type: String
-      }
-    },
-    setup(props, ctx) {
-      const message = ref("app")
-      return {
-        message
-      }
-    },
-
+    }
   }
+
+
+
+}
 )
 </script>
 
