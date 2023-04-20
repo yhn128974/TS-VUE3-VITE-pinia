@@ -9,6 +9,8 @@ import {
   ElRadio,
   ElTabPane,
   ElTabs,
+  ElLink,
+  ElCheckbox,
 } from "element-plus";
 
 const ElementPlusIconsVue = [User, Iphone];
@@ -20,6 +22,8 @@ const components = [
   ElRadio,
   ElTabs,
   ElTabPane,
+  ElLink,
+  ElCheckbox,
 ];
 export default (app: App<Element>) => {
   // 注册ui组件
