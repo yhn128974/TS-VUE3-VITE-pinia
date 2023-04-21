@@ -3,7 +3,6 @@
     <div class="login-title">
       <h2>Backstage management system</h2>
     </div>
-
     <el-tabs type="border-card" class="demo-tabs" stretch>
       <el-tab-pane class="tab-title">
         <template #label>
@@ -29,7 +28,6 @@
         <LoginPhone />
       </el-tab-pane>
     </el-tabs>
-
     <div class="login-end">
       <div class="account-control">
         <el-checkbox v-model="iskeepPassword">记住密码</el-checkbox>
@@ -58,7 +56,6 @@ export default defineComponent({
     LoginAccount,
     LoginPhone,
   },
-
   setup() {
     const account = reactive({
       name: "",
@@ -69,9 +66,8 @@ export default defineComponent({
     const accountRef = ref<InstanceType<typeof LoginAccount>>();
 
     const handleLoginClick = function () {
-      accountRef.value?.loginAction();
+      accountRef.value?.loginAction(iskeepPassword.value)
     };
-
     return {
       account,
       iskeepPassword,
